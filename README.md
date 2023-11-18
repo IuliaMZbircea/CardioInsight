@@ -99,15 +99,17 @@ Frequently, epidemiologists need to define the population at risk for some disea
 - **Data Visualization:** [Plotly](https://plotly.com/), [Matplotlib](https://matplotlib.org/), or [D3.js](https://d3js.org/)
 
 ## Usage
-User Registration/Login:
+User/Patient Registration/Login:
 
 - Users must register and log in to access personalized recommendations.
-Input Medical Records:
 
 - Users input their medical records or authorize access to existing records.
-View Recommendations:
 
 - Receive personalized risk assessment and lifestyle recommendations based on machine learning analysis.
+
+User/Dr Pregistration/Login:
+
+- Users must register and log in to access their assigned patients' data.
 
 ## Acknowledgements
 Framingham Heart Study for providing the valuable dataset.
