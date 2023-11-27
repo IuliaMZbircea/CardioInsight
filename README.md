@@ -91,14 +91,14 @@ For Each participant the following event data is provided. For each type of even
 
 ## Incident Events
 Frequently, epidemiologists need to define the population at risk for some disease or event outcome, and individuals who have previously had an event need to be excluded from the analysis so that only new or first events are counted. Incidence or first event rates can be calculated using any of the three examinations as a baseline exam. The variables PREVAP, PREVMI, PREVCHD, PREVSTRK, and PREVHYP will define the population at risk for the outcome of interest.
-## Tech Stack
+## Tech Stack ---> to be modified
 
 - **Backend:** [Flask](https://flask.palletsprojects.com/)
 - **Frontend:** Angular (HTML, CSS, TypeScript)
 - **Machine Learning:** [Scikit-Learn](https://scikit-learn.org/), [TensorFlow](https://www.tensorflow.org/), or [PyTorch](https://pytorch.org/)
 - **Data Visualization:** [Plotly](https://plotly.com/), [Matplotlib](https://matplotlib.org/), or [D3.js](https://d3js.org/)
 
-## Usage
+## Usage ---> to be modified or detailed
 User/Patient Registration/Login:
 
 - Users must register and log in to access personalized recommendations.
@@ -113,6 +113,13 @@ User/Dr Pregistration/Login:
 
 ## Acknowledgements
 Framingham Heart Study for providing the valuable dataset.
+
+## Research Papers
+
+1. Shah, D., Patel, S., & Bharti, S.K. (2020). Heart Disease Prediction using Machine Learning Techniques. *SN COMPUT. SCI.*, 1, 345. DOI: [10.1007/s42979-020-00365-y](https://doi.org/10.1007/s42979-020-00365-y)
+2. Ramalingam, V. V., Dandapath, Ayantan, & Raja, M. Karthik. (2018). Heart disease prediction using machine learning techniques: a survey. *International Journal of Engineering & Technology*, 7(2.8), 684-687.
+3. Fatima, Meherwar, and Maruf Pasha. (2017). Survey of machine learning algorithms for disease diagnostic. *Journal of Intelligent Learning Systems and Applications*, 9(01), 1-16.
+
 
 
 
