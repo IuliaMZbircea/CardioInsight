@@ -11,7 +11,7 @@ CardioInsight is a web application designed to provide personalized recommendati
 - **Personalized Recommendations:** Offer tailored lifestyle recommendations to help users prevent heart diseases.
 - **User Authentication:** Ensure privacy and secure access to individual medical records.
 
-## Data Source
+## Data Source -> CardioInsight/Dataset/frmgham2.csv
 
 The model utilizes data from the Framingham Heart Study, consisting of 4,434 patients with a total of 11.628 observations. This dataset serves as the foundation for training the machine learning model.
 
