@@ -15,7 +15,7 @@ CardioInsight is a web application designed to provide personalized recommendati
 
 The model utilizes data from the Framingham Heart Study, consisting of 4,434 patients with a total of 11.628 observations. This dataset serves as the foundation for training the machine learning model.
 
-### Dataset Description:
+### Dataframe Description:
 
 - RANDID - Unique identification number for each participant (2448 - 9999312)
 - SEX - Participant sex
