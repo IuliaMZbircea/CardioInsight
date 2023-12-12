@@ -95,7 +95,7 @@ Frequently, epidemiologists need to define the population at risk for some disea
 
 - **Backend:** [Flask](https://flask.palletsprojects.com/)
 - **Frontend:** Angular (HTML, CSS, TypeScript)
-- **Machine Learning:** [Scikit-Learn](https://scikit-learn.org/), [TensorFlow](https://www.tensorflow.org/), or [PyTorch](https://pytorch.org/)
+- **Machine Learning:** [Scikit-Learn](https://scikit-learn.org/), [PyTorch](https://pytorch.org/)
 - **Data Visualization:** [Plotly](https://plotly.com/), [Matplotlib](https://matplotlib.org/), or [D3.js](https://d3js.org/)
 
 ## Usage ---> to be modified or detailed
