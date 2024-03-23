@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button,TouchableOpacity, StyleSheet, KeyboardAvoidingView, SafeAreaView, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { FIREBASE_AUTH } from '../../FirebaseConfig';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 
 const SignupScreen = () => {
@@ -11,25 +9,9 @@ const SignupScreen = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
-    const auth = FIREBASE_AUTH;
     console.log('Signup rendered');
 
-    const handleSignUp = async () => {
-        setLoading(true);
-        try{
-            const response = await createUserWithEmailAndPassword(auth, email, password);
-            console.log(response);
-            navigation.navigate('Login');
-            
-
-        } catch(error){
-            console.log(error);
-            alert('Sign in failed!');
-        } finally{
-            setLoading(false);
-        }
-    } 
-
+    
     const handleLogin = async () =>{
         navigation.navigate('Login');
         console.log('Navigated to login page.');
@@ -60,7 +42,7 @@ const SignupScreen = () => {
             placeholderTextColor="#aaa"
           />
           <TouchableOpacity style={styles.loginButton}>
-            <Text style={{ color: '#C83030', fontSize: 16 }} onPress={handleSignUp} >Sign Up</Text>
+            <Text style={{ color: '#C83030', fontSize: 16 }} >Sign Up</Text>
           </TouchableOpacity>
 
           <View style={styles.separatorContainer}>

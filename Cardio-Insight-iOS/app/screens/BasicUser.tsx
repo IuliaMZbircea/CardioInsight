@@ -14,9 +14,6 @@ import {
 
 import { Picker } from '@react-native-picker/picker';
 import { useNavigation } from '@react-navigation/native';
-import { addDoc, collection, getDocs, DocumentData} from 'firebase/firestore';
-import { FIREBASE_AUTH } from '../../FirebaseConfig';
-import { FIREBASE_DB} from '../../FirebaseConfig';
 
 interface UserData {
   uid: string;
@@ -38,56 +35,6 @@ const BasicUser: React.FC = () => {
   const [smoker, setSmoker] = useState<string>('');
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [userData, setUserData] = useState<UserData | null>(null);
-
-  const user = FIREBASE_AUTH.currentUser;
-  const navigation = useNavigation<any>();
-
-  
-
-  useEffect(() => {
-    const fetchData = async () => {
-      if (user) {
-        const userRef = collection(FIREBASE_DB, 'users');
-        const querySnapshot = await getDocs(userRef);
-
-        querySnapshot.forEach((doc) => {
-          const data = doc.data() as UserData;
-          if (data.uid === user.uid) {
-            setUserData(data);
-          }
-        });
-      }
-    };
-
-    fetchData();
-  }, [user]);
-
-  const addUserToFirebase = async () => {
-    if (user) {
-      const userRef = collection(FIREBASE_DB, 'users');
-
-      try {
-        const docRef = await addDoc(userRef, {
-          uid: user.uid,
-          age,
-          gender,
-          diagnosedCVD,
-          height,
-          weight,
-          smoker,
-        });
-
-        console.log('Document written with ID: ', docRef.id);
-      } catch (error) {
-        console.error('Error adding document: ', error);
-      }
-    }
-  };
-
-  const handleAddUser = () => {
-    addUserToFirebase();
-  };
-
 //   const handleSubmitForm = () => {
 //     console.log('Navigation to next screen page.');
 //     navigation.navigate('ProfileScreen');
@@ -235,7 +182,7 @@ const BasicUser: React.FC = () => {
           </View>
 
           {/* Submit button */}
-          <Button title="Submit" onPress={handleAddUser} color="#C83030" />
+          <Button title="Submit" color="#C83030" />
         </View>
       </KeyboardAvoidingView>
     </SafeAreaView>

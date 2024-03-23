@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button,TouchableOpacity, StyleSheet, KeyboardAvoidingView, SafeAreaView, Platform, ActivityIndicator } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { FIREBASE_AUTH } from '../../FirebaseConfig';
-import { signInWithEmailAndPassword } from 'firebase/auth';
 import { AppleButton } from '@invertase/react-native-apple-authentication';
 
 const LoginScreen = () => {
@@ -10,22 +8,7 @@ const LoginScreen = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
-    const auth = FIREBASE_AUTH;
     const navigation = useNavigation<any>();
-
-    const handleLogin = async () => {
-        setLoading(true);
-        try{
-            const response = await signInWithEmailAndPassword(auth, email, password);
-            console.log(response);
-            navigation.navigate('BasicUser')
-        } catch(error : any){
-            console.log(error);
-            alert('Log in failed ' + error.message);
-        } finally{
-            setLoading(false);
-        }
-    } 
 
     const handleSignUp = async () => {
         navigation.navigate("Signup");
@@ -61,7 +44,7 @@ const LoginScreen = () => {
             ) : ( 
                 <>
                     <TouchableOpacity style={styles.loginButton}>
-                        <Button title = "Login" onPress={() => handleLogin()} />
+                        <Button title = "Login" />
                     </TouchableOpacity>
                     
                     <Text style={styles.footer}>
