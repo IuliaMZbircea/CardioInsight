@@ -3,6 +3,7 @@ import { View, Text, TextInput, Button,TouchableOpacity, StyleSheet, KeyboardAvo
 import { useNavigation } from '@react-navigation/native';
 import { FIREBASE_AUTH } from '../../FirebaseConfig';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { AppleButton } from '@invertase/react-native-apple-authentication';
 
 const LoginScreen = () => {
 
@@ -17,6 +18,7 @@ const LoginScreen = () => {
         try{
             const response = await signInWithEmailAndPassword(auth, email, password);
             console.log(response);
+            navigation.navigate('BasicUser')
         } catch(error : any){
             console.log(error);
             alert('Log in failed ' + error.message);
@@ -26,7 +28,7 @@ const LoginScreen = () => {
     } 
 
     const handleSignUp = async () => {
-        navigation.navigate("SignupScreen");
+        navigation.navigate("Signup");
     }
 
   return (
@@ -61,6 +63,7 @@ const LoginScreen = () => {
                     <TouchableOpacity style={styles.loginButton}>
                         <Button title = "Login" onPress={() => handleLogin()} />
                     </TouchableOpacity>
+                    
                     <Text style={styles.footer}>
                         Not registered yet?
                         <TouchableOpacity> 
