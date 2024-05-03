@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import { Button } from 'react-native-elements';
+// import { Button } from 'react-native-elements';
 import { MaterialIcons } from '@expo/vector-icons';
 
-const ProfilePage = () => {
+const ProfilePage : React.FC = ()  => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -20,11 +20,11 @@ const ProfilePage = () => {
         </View>
         <View style={styles.riskContainer}>
           <Text style={styles.riskText}>Risk of: Hypertension</Text>
-          <Button
+          {/* <Button
             title="See Insights"
             icon={<MaterialIcons name="insights" size={24} color="white" />}
             buttonStyle={styles.riskButton}
-          />
+          /> */}
         </View>
       </View>
       <View style={styles.footer}>

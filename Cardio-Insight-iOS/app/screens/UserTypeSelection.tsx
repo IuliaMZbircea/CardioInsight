@@ -1,9 +1,8 @@
-// Import necessary modules and hooks
 import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TouchableWithoutFeedback } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const SignupScreen: React.FC = () => {
+const UserTypeSelection: React.FC = () => {
   const navigation = useNavigation<any>();
 
   const handleUserTypeSelection = (isAdvancedUser: boolean) => {
@@ -14,7 +13,6 @@ const SignupScreen: React.FC = () => {
     }
   };
 
-  // Define the UserTypeContainer component
   const UserTypeContainer = ({ title, description, isAdvancedUser }: any) => (
     <TouchableWithoutFeedback onPress={() => handleUserTypeSelection(isAdvancedUser)}>
       <View style={styles.userTypeContainer}>
@@ -24,7 +22,6 @@ const SignupScreen: React.FC = () => {
     </TouchableWithoutFeedback>
   );
 
-  // Return the JSX structure for SignupScreen
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userTypeContainerWrapper}>
@@ -101,6 +98,4 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
 });
-
-// Export the SignupScreen component
-export default SignupScreen;
+export default UserTypeSelection;

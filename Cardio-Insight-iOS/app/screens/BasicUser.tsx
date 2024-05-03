@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -11,24 +11,34 @@ import {
   Modal,
   TouchableWithoutFeedback,
 } from 'react-native';
+
 import { Picker } from '@react-native-picker/picker';
 import { useNavigation } from '@react-navigation/native';
 
+interface UserData {
+  uid: string;
+  age: string;
+  gender: string;
+  diagnosedCVD: string;
+  height: string;
+  weight: string;
+  smoker: string;
+}
+
 const BasicUser: React.FC = () => {
-  const [age, setAge] = useState('');
-  const [gender, setGender] = useState('');
-  const [diagnosedCVD, setDiagnosedCVD] = useState('');
-  const [height, setHeight] = useState('');
-  const [weight, setWeight] = useState('');
-  const [smoker, setSmoker] = useState('');
+
+  const [age, setAge] = useState<string>('');
+  const [gender, setGender] = useState<string>('');
+  const [diagnosedCVD, setDiagnosedCVD] = useState<string>('');
+  const [height, setHeight] = useState<string>('');
+  const [weight, setWeight] = useState<string>('');
+  const [smoker, setSmoker] = useState<string>('');
   const [isModalVisible, setIsModalVisible] = useState(false);
-
-  const navigation = useNavigation<any>();
-
-  const handleSave = () => {
-    console.log('Data saved:', { age, gender, diagnosedCVD, height, weight, smoker });
-    navigation.navigate('ProfileScreen'); 
-  };
+  const [userData, setUserData] = useState<UserData | null>(null);
+//   const handleSubmitForm = () => {
+//     console.log('Navigation to next screen page.');
+//     navigation.navigate('ProfileScreen');
+//   }
 
   const handleModalToggle = () => {
     setIsModalVisible(!isModalVisible);
@@ -40,9 +50,33 @@ const BasicUser: React.FC = () => {
   };
 
   return (
+
+    // <div>
+    //   {/* Your existing JSX */}
+    //   <input
+    //     type="text"
+    //     placeholder="Age"
+    //     value={age}
+    //     onChange={(e) => setAge(e.target.value)}
+    //   />
+    //   {/* ... other input fields */}
+    //   <button onClick={handleAddUser}>Add User</button>
+
+    //   {/* Display user-specific data */}
+    //   {userData && (
+    //     <div>
+    //       <p>Age: {userData.age}</p>
+    //       <p>Gender: {userData.gender}</p>
+    //       <p>Diagnosed CVD: {userData.diagnosedCVD}</p>
+    //       <p>Height: {userData.height}</p>
+    //       <p>Weight: {userData.weight}</p>
+    //       <p>Smoker: {userData.smoker}</p>
+    //     </div>
+    //   )}
+    // </div>
     <SafeAreaView style={styles.container}>
       <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        // behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={styles.userTypeContainerWrapper}
       >
         <View style={styles.userTypeContainer}>
@@ -53,7 +87,7 @@ const BasicUser: React.FC = () => {
             <View style={styles.formColumn}>
               <TextInput
                 style={styles.formInput}
-                value={age}
+                value={age} 
                 onChangeText={(text) => setAge(text)}
                 placeholder="Age"
                 placeholderTextColor="#C83030"
@@ -148,7 +182,7 @@ const BasicUser: React.FC = () => {
           </View>
 
           {/* Submit button */}
-          <Button title="Submit" onPress={handleSave} color="#C83030" />
+          <Button title="Submit" color="#C83030" />
         </View>
       </KeyboardAvoidingView>
     </SafeAreaView>

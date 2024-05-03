@@ -9,7 +9,6 @@ const AdvancedUser: React.FC = () => {
         <View style={styles.userTypeContainer}>
           <Text style={styles.userTypeTitle}>Advanced User</Text>
           <Text style={styles.userTypeDescription}>
-            {/* Customize the advanced user description as needed */}
             {`\u2022 Age\n\u2022 Gender\n\u2022 Diagnosed CVD\n\u2022 Height\n\u2022 Weight\n\u2022 Smoker (Yes/No)\n\u2022 Cholesterol\n\u2022 Systolic Blood Pressure\n\u2022 Diastolic Blood Pressure\n\u2022 Heart Rate`}
           </Text>
         </View>
