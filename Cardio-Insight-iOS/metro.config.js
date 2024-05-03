@@ -1,6 +1,7 @@
-const { getDefaultConfig } = require('@expo/metro-config');
+const { getDefaultConfig } = require('expo/metro-config');
 
-const defaultConfig = getDefaultConfig(__dirname);
-defaultConfig.resolver.sourceExts.push('cjs');
+// initialize configuration
+const config = getDefaultConfig(__dirname);
+config.resolver.resolverMainFields = ['react-native', 'browser', 'main'];
 
-module.exports = defaultConfig;
+module.exports = config;
