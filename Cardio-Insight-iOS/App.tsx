@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './app/screens/Login';
 import BasicUser from './app/screens/BasicUser';
 import Signup from './app/screens/Signup';
+import UserTypeSelection from './app/screens/UserTypeSelection';
 
 
 const Stack = createNativeStackNavigator();
@@ -26,8 +27,8 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Signup">      
-          <Stack.Screen name = "Login" component={Login} />
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="UserTypeSelection">      
+          /*<Stack.Screen name = "Login" component={Signup} />
           <Stack.Screen name = "BasicUser" component={BasicUser} />
         {/* <Stack.Screen name = "Signup" component={SignupScreen} />
         <Stack.Screen name = "SignupStack" component = {UserTypeSelection} />

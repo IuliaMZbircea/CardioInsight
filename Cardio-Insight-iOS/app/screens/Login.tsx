@@ -10,6 +10,9 @@ const LoginScreen = () => {
     const [loading, setLoading] = useState(false);
     const navigation = useNavigation<any>();
 
+    const handleLogin = async () => {
+      navigation.navigate("UserTypeSelection.tsx");
+  }
     const handleSignUp = async () => {
         navigation.navigate("Signup");
     }
@@ -44,7 +47,7 @@ const LoginScreen = () => {
             ) : ( 
                 <>
                     <TouchableOpacity style={styles.loginButton}>
-                        <Button title = "Login" />
+                        <Button title = "Login" onPress={handleLogin} />
                     </TouchableOpacity>
                     
                     <Text style={styles.footer}>
