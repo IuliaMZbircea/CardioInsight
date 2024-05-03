@@ -8,7 +8,20 @@ import Login from './app/screens/Login';
 import BasicUser from './app/screens/BasicUser';
 import Signup from './app/screens/Signup';
 import UserTypeSelection from './app/screens/UserTypeSelection';
+import awsconfig from './src/aws-exports';
+import { createPatient } from './src/graphql/mutations';
 
+import { Amplify } from 'aws-amplify';
+import API, { graphqlOperation } from '@aws-amplify/api-graphql';
+
+Amplify.configure(awsconfig);
+
+
+async function addUser() {
+  const userDetails = { name: 'Iulia Zbircea', email: 'iuliazbircea@gmail.com' };
+  const operation = graphqlOperation(createPatient, { input: userDetails });
+  await API.graphql(operation);
+}
 
 const Stack = createNativeStackNavigator();
 const InsideStack = createNativeStackNavigator();

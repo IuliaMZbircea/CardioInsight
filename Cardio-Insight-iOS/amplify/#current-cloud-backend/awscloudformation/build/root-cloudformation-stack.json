@@ -207,7 +207,21 @@
           "breakCircularDependency": true,
           "dependsOn": "",
           "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://localhost/\"],\"LogoutURLs\":[\"https://localhost/\"]}",
-          "hostedUIProviderCreds": "[{\"ProviderName\":\"Google\",\"client_id\":\"420154273915-i99pif6emla0sogmqj4lr6hjlarfbedb.apps.googleusercontent.com\",\"client_secret\":\"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\"}]",
+          "hostedUIProviderCreds": "[]",
+          "env": "dev"
+        }
+      }
+    },
+    "apicardioinsightios": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-cardioinsightios-dev-8181a-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "Parameters": {
+          "AppSyncApiName": "cardioinsightios",
+          "DynamoDBBillingMode": "PAY_PER_REQUEST",
+          "DynamoDBEnableServerSideEncryption": false,
+          "S3DeploymentBucket": "amplify-cardioinsightios-dev-8181a-deployment",
+          "S3DeploymentRootKey": "amplify-appsync-files/366d29d9a9da7585482b3a269377f241d0d5cc23",
           "env": "dev"
         }
       }
