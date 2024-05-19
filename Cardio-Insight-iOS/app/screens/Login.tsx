@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button,TouchableOpacity, StyleSheet, KeyboardAvoidingView, SafeAreaView, Platform, ActivityIndicator } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { AppleButton } from '@invertase/react-native-apple-authentication';
 
 const LoginScreen = () => {
 
@@ -11,7 +10,7 @@ const LoginScreen = () => {
     const navigation = useNavigation<any>();
 
     const handleLogin = async () => {
-      navigation.navigate("UserTypeSelection.tsx");
+      navigation.navigate("UserTypeSelection");
   }
     const handleSignUp = async () => {
         navigation.navigate("Signup");

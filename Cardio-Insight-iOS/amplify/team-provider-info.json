@@ -14,6 +14,9 @@
     "categories": {
       "auth": {
         "cardioinsightiosd7547816": {}
+      },
+      "api": {
+        "cardioinsightios": {}
       }
     }
   }
