@@ -1,115 +1,157 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
-// import { Button } from 'react-native-elements';
-import { MaterialIcons } from '@expo/vector-icons';
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, KeyboardAvoidingView, Alert } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
-const ProfilePage : React.FC = ()  => {
+const ProfileScreen = () => {
+  const navigation = useNavigation<any>();
+  const [wellnessScore, setWellnessScore] = useState(80);
+  const riskOf = 'Hypertension';
+  
+  const handleInfoButton = () => {
+    Alert.alert(
+      'Info',
+      'This is an information message.',
+      [{ text: 'OK' }]
+    );
+  }
+
+  // Function to get current date in the format: DD MMM YYYY
+  const getCurrentDate = () => {
+    const date = new Date();
+    const options = { year: 'numeric', month: 'short', day: '2-digit' } as const;
+    return date.toLocaleDateString('en-US', options);
+  }
+
+  const handleInsights = async () => {
+    navigation.navigate("Insights");
+  }
+
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Profile</Text>
-      </View>
-      <View style={styles.body}>
-        <View style={styles.scoreContainer}>
-          <View style={styles.scoreCircle}>
-            <Text style={styles.scoreText}>87</Text>
+    <SafeAreaView style={styles.container}>
+      <KeyboardAvoidingView
+        style={styles.userTypeContainerWrapper}
+      >
+        <View style={styles.innerContainer}>
+          <View style={styles.scoreContainer}>
+            <AnimatedCircularProgress
+              size={200}
+              width={18}
+              fill={(wellnessScore / 100) * 100} // Converting percentage to fill value
+              tintColor="#C83030"
+              backgroundColor="#EAE8E8"
+              padding={10}
+              lineCap="round" 
+              
+            >
+              {/*Show wellness score inside AnimatedCircularProgress */}
+              {(fill) => (
+                <Text style={styles.progressText}>
+                  {Math.round((fill / 100) * 100)}
+                </Text>
+              )}
+            </AnimatedCircularProgress>
+            <Text style={[styles.text, { marginBottom: 5 }, {marginTop: 40}]}>Your Wellness Score</Text>
+            <Text style={styles.dateText}>({getCurrentDate()})</Text>
           </View>
-          <Text style={styles.scoreLabel}>Your Wellness Score</Text>
-          <Text style={styles.scoreDate}>(20 Dec 2023)</Text>
-          <Text style={styles.scoreLink}>What's a Wellness Score?</Text>
+          <TouchableOpacity onPress={handleInfoButton} style={styles.infoButton}>
+              <Text style={styles.infoButtonText}>What's a Wellness Score?</Text>
+          </TouchableOpacity>
+          <View style={styles.riskContainer}>
+            <Text style={styles.text}>Risk of: {riskOf}</Text>
+          </View>
         </View>
-        <View style={styles.riskContainer}>
-          <Text style={styles.riskText}>Risk of: Hypertension</Text>
-          {/* <Button
-            title="See Insights"
-            icon={<MaterialIcons name="insights" size={24} color="white" />}
-            buttonStyle={styles.riskButton}
-          /> */}
-        </View>
-      </View>
-      <View style={styles.footer}>
-        <MaterialIcons name="person" size={32} color="black" />
-        <MaterialIcons name="settings" size={32} color="black" />
-      </View>
-    </View>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleInsights()}>
+          <Text style={styles.buttonText}>See Insights</Text>
+        </TouchableOpacity>
+        
+      </KeyboardAvoidingView>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#FFFCFC', 
+  },
+  userTypeContainerWrapper: {
+    flex: 1,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 20,
   },
   header: {
-    height: 80,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 24,
+    fontSize: 32,
     fontWeight: 'bold',
+    color: '#C83030',
   },
-  body: {
+  innerContainer: {
+    alignItems: 'center',
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
   },
   scoreContainer: {
-    width: 300,
-    height: 300,
-    borderRadius: 150,
-    borderWidth: 10,
-    borderColor: '#f00',
-    justifyContent: 'center',
     alignItems: 'center',
-  },
-  scoreCircle: {
-    width: 250,
-    height: 250,
-    borderRadius: 125,
-    borderWidth: 10,
-    borderColor: '#ccc',
     justifyContent: 'center',
-    alignItems: 'center',
   },
-  scoreText: {
-    fontSize: 48,
+  score: {
+    fontSize: 45,
     fontWeight: 'bold',
+    color: '#C83030',
   },
-  scoreLabel: {
-    fontSize: 18,
-    marginTop: 10,
+  progressText: {
+    fontSize: 50,
+    fontWeight: 'bold',
+    color: '#C83030',
   },
-  scoreDate: {
-    fontSize: 14,
-    color: '#999',
+  text: {
+    color: '#C83030',
+    fontSize: 26,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
-  scoreLink: {
-    fontSize: 16,
-    color: '#00f',
-    textDecorationLine: 'underline',
-    marginTop: 10,
+  dateText: {
+    color: '#D68E8D', 
+    fontSize: 16, 
+    marginBottom: 10,
+  },
+  buttonText:{
+    color: '#C83030',
+    fontSize: 17,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 10,
+  },
+  button: {
+    backgroundColor: '#EEE6E6', 
+    paddingVertical: 12,
+    paddingHorizontal: 50,
+    borderRadius: 15,
+    marginBottom: 120, 
   },
   riskContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 20,
+    marginTop: '10%',
   },
-  riskText: {
-    fontSize: 18,
+  infoButtonText: {
+    color: '#D68E8D',
+    fontSize: 16,
     fontWeight: 'bold',
-    marginRight: 10,
   },
-  riskButton: {
-    backgroundColor: '#f00',
-    paddingHorizontal: 20,
-  },
-  footer: {
-    height: 80,
+  infoButtonContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
     alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 5,
+  },
+  infoButton: {
+    backgroundColor: '#FFFCFC',
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 5,
   },
 });
 
-export default ProfilePage;
+export default ProfileScreen;

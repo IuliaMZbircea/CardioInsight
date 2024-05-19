@@ -1,0 +1,88 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cardioinsightios-dev-8181a-authRole",
+      "UnauthRoleArn": "arn:aws:iam::590183727904:role/amplify-cardioinsightios-dev-8181a-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::590183727904:role/amplify-cardioinsightios-dev-8181a-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-cardioinsightios-dev-8181a-deployment",
+      "UnauthRoleName": "amplify-cardioinsightios-dev-8181a-unauthRole",
+      "StackName": "amplify-cardioinsightios-dev-8181a",
+      "StackId": "arn:aws:cloudformation:eu-central-1:590183727904:stack/amplify-cardioinsightios-dev-8181a/a10b1560-0970-11ef-bb91-021f45615b5d",
+      "AmplifyAppId": "d1ulblledpu6a6"
+    }
+  },
+  "auth": {
+    "cardioinsightiosd7547816": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [
+          "GOOGLE"
+        ],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "output": {
+        "UserPoolId": "eu-central-1_wpScQsKnO",
+        "AppClientIDWeb": "5nqp0gvhii17m0r0l9behmpn5j",
+        "AppClientID": "6o032brharohst63t3s5c7bav1",
+        "HostedUIDomain": "cardioinsightiosd7547816-d7547816-dev",
+        "IdentityPoolId": "eu-central-1:312b78dd-b026-47e5-92af-d5604d03e37c",
+        "UserPoolArn": "arn:aws:cognito-idp:eu-central-1:590183727904:userpool/eu-central-1_wpScQsKnO",
+        "IdentityPoolName": "cardioinsightiosd7547816_identitypool_d7547816__dev",
+        "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://localhost/\"],\"LogoutURLs\":[\"https://localhost/\"]}",
+        "UserPoolName": "cardioinsightiosd7547816_userpool_d7547816"
+      },
+      "lastPushTimeStamp": "2024-05-03T20:20:34.687Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-cardioinsightios-dev-8181a-deployment/amplify-cfn-templates/auth/cardioinsightiosd7547816-cloudformation-template.json",
+        "logicalId": "authcardioinsightiosd7547816"
+      }
+    }
+  },
+  "api": {
+    "cardioinsightios": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "qcj5kx6oyva7lkdeyt335mvsj4",
+        "GraphQLAPIEndpointOutput": "https://32hnqyjk25fe5owjmzw7vl4oxa.appsync-api.eu-central-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-64d44sfozrh2jmh7aglgjkh4g4"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-cardioinsightios-dev-8181a-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apicardioinsightios"
+      },
+      "lastPushTimeStamp": "2024-05-03T20:20:36.745Z",
+      "lastPushDirHash": "km6oiC+aBErqb3UAK7IgmY4Av20="
+    }
+  }
+}

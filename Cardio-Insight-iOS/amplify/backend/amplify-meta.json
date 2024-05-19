@@ -51,7 +51,7 @@
         "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://localhost/\"],\"LogoutURLs\":[\"https://localhost/\"]}",
         "UserPoolName": "cardioinsightiosd7547816_userpool_d7547816"
       },
-      "lastPushTimeStamp": "2024-05-03T20:20:34.687Z",
+      "lastPushTimeStamp": "2024-05-15T19:44:15.182Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-cardioinsightios-dev-8181a-deployment/amplify-cfn-templates/auth/cardioinsightiosd7547816-cloudformation-template.json",
         "logicalId": "authcardioinsightiosd7547816"
@@ -81,7 +81,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-cardioinsightios-dev-8181a-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apicardioinsightios"
       },
-      "lastPushTimeStamp": "2024-05-03T20:20:36.745Z",
+      "lastPushTimeStamp": "2024-05-15T19:44:15.187Z",
       "lastPushDirHash": "km6oiC+aBErqb3UAK7IgmY4Av20="
     }
   }
