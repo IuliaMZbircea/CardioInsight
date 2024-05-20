@@ -49,7 +49,7 @@ const LoginScreen = () => {
                     <Text style={styles.footer}>
                         Not registered yet?
                         <TouchableOpacity> 
-                            <Text onPress={() => handleSignUp}style={{ color: `rgba(200, 48, 48, 0.6)`, fontWeight: 'bold' }}> Create an account</Text>
+                            <Text onPress={() => handleSignUp()}style={{ color: `rgba(200, 48, 48, 0.6)`, fontWeight: 'bold' }}> Create an account</Text>
                         </TouchableOpacity>
                      </Text>
                 </> 

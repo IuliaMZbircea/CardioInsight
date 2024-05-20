@@ -29,6 +29,10 @@ const SignupScreen = () => {
         navigation.navigate('Login');
         console.log('Navigated to login page.');
     }
+
+    const handleRedirect = async() =>{
+      navigation.navigate('UserProfile');
+    }
     return (
       <SafeAreaView style={styles.container}>
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.userTypeContainerWrapper}>
@@ -51,7 +55,7 @@ const SignupScreen = () => {
               onChangeText={(text) => setPassword(text)}
               placeholderTextColor="#aaa"
             />
-            <TouchableOpacity style={styles.loginButton} onPress={handleSignUp}>
+            <TouchableOpacity style={styles.loginButton} onPress={handleRedirect}>
               <Text style={{ color: '#C83030', fontSize: 16 }}>Sign Up</Text>
             </TouchableOpacity>
   
@@ -61,7 +65,7 @@ const SignupScreen = () => {
             <Text style={styles.footer}>
               Already have an account?
               <TouchableOpacity onPress={handleLogin}>
-                <Text style={{ backgroundColor: `rgba(200, 48, 48, 0.6)`, fontWeight: 'bold' }}> Log In</Text>
+                <Text style={{ color: `rgba(200, 48, 48, 0.6)`, fontWeight: 'bold' }}> Log In</Text>
               </TouchableOpacity>
             </Text>
           </View>
