@@ -16,12 +16,12 @@ import { Picker } from '@react-native-picker/picker';
 import { useNavigation } from '@react-navigation/native';
 
 interface UserData {
-  uid: string;
-  age: string;
+  uid: Int16Array;
+  age: Int16Array;
   gender: string;
   diagnosedCVD: string;
-  height: string;
-  weight: string;
+  height: Int16Array;
+  weight: Int16Array;
   smoker: string;
 }
 

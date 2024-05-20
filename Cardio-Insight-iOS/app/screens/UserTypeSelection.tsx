@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, SafeAreaView, TouchableWithoutFeedback } from '
 import { useNavigation } from '@react-navigation/native';
 
 const UserTypeSelection: React.FC = () => {
+  
   const navigation = useNavigation<any>();
 
   const handleUserTypeSelection = (isAdvancedUser: boolean) => {
@@ -49,7 +50,6 @@ const UserTypeSelection: React.FC = () => {
   );
 };
 
-// Define the styles for SignupScreen
 const styles = StyleSheet.create({
   container: {
     flex: 1,

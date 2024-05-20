@@ -5,8 +5,8 @@ import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
 const ProfileScreen = () => {
   const navigation = useNavigation<any>();
-  const [wellnessScore, setWellnessScore] = useState(80);
-  const riskOf = 'Hypertension';//will be taken from ml file
+  const [wellnessScore, setWellnessScore] = useState(87);
+  const [riskOf, setRiskOf] = useState("Hypertension");//will be taken from ml file
   
   const handleInfoButton = () => {
     Alert.alert(
@@ -37,7 +37,7 @@ const ProfileScreen = () => {
             <AnimatedCircularProgress
               size={200}
               width={18}
-              fill={(wellnessScore / 100) * 100} // Converting percentage to fill value
+              fill={(wellnessScore / 100) * 100}
               tintColor="#C83030"
               backgroundColor="#EAE8E8"
               padding={10}
@@ -50,13 +50,16 @@ const ProfileScreen = () => {
                   {Math.round((fill / 100) * 100)}
                 </Text>
               )}
+
             </AnimatedCircularProgress>
             <Text style={[styles.text, { marginBottom: 5 }, {marginTop: 40}]}>Your Wellness Score</Text>
             <Text style={styles.dateText}>({getCurrentDate()})</Text>
+
           </View>
           <TouchableOpacity onPress={handleInfoButton} style={styles.infoButton}>
-              <Text style={styles.infoButtonText}>What's a Wellness Score?</Text>
+              <Text style={styles.infoButtonText}>What's the Wellness Score?</Text>
           </TouchableOpacity>
+
           <View style={styles.riskContainer}>
             <Text style={styles.text}>Risk of: {riskOf}</Text>
           </View>
