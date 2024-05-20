@@ -18,10 +18,7 @@ const LoginScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <KeyboardAvoidingView
-        // behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        style={styles.userTypeContainerWrapper}
-      >
+      <KeyboardAvoidingView style={styles.userTypeContainerWrapper}>
         <View style={styles.userTypeContainer}>
           <Text style={styles.userTypeTitle}>Login</Text>
           <TextInput

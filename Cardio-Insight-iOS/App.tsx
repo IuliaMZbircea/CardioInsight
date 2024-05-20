@@ -8,23 +8,24 @@ import Login from './app/screens/Login';
 import BasicUser from './app/screens/BasicUser';
 import Signup from './app/screens/Signup';
 import UserTypeSelection from './app/screens/UserTypeSelection';
+import UserProfile from './app/screens/UserProfile';
+import Insights from './app/screens/Insights';
 
 //Amplify Authentication 
 import { Amplify } from "aws-amplify";
 import { Authenticator, useAuthenticator } from "@aws-amplify/ui-react-native";
 import amplifyconfig from './src/amplifyconfiguration.json';
-import UserProfile from './app/screens/UserProfile';
-import Insights from './app/screens/Insights';
+import AdvancedUser from './app/screens/AdvancedUser';
+
 Amplify.configure(amplifyconfig);
 
 const Stack = createNativeStackNavigator();
-const InsideStack = createNativeStackNavigator();
 
 
 export default function App() {
   return (
     <NavigationContainer>
-    <Stack.Navigator initialRouteName="Login">
+    <Stack.Navigator initialRouteName="BasicUser">
         <Stack.Screen 
             name="UserProfile" 
             component={UserProfile}
@@ -45,10 +46,37 @@ export default function App() {
               options={
                 { headerShown: false }
               }/>
-        <Stack.Screen name="Signup" component={Signup} />
-        <Stack.Screen name="BasicUser" component={BasicUser} />
-        <Stack.Screen name="UserTypeSelection" component={UserTypeSelection} />
-        <Stack.Screen name="Insights" component={Insights}/>
+        <Stack.Screen 
+              name="Signup" 
+              component={Signup}
+              options={
+                { headerShown: false }
+              } />
+        <Stack.Screen 
+              name="BasicUser" 
+              component={BasicUser} 
+              options={
+                { headerShown: false }
+              } />
+        <Stack.Screen 
+              name="UserTypeSelection" 
+              component={UserTypeSelection} 
+              options={
+                { headerShown: false }
+              } />
+        <Stack.Screen 
+              name="Insights" 
+              component={Insights}
+              options={
+                { headerShown: false }
+              } />
+        <Stack.Screen 
+              name="AdvancedUser" 
+              component={AdvancedUser}
+              options={
+                { headerShown: false }
+              }/>
+        
     </Stack.Navigator>
     </NavigationContainer>
   );

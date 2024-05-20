@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
+//copy pasted from loading, needs implementation
 const Settings: React.FC = () => {
     const loadingDuration = 4500; // in milliseconds
     const navigation = useNavigation<any>();

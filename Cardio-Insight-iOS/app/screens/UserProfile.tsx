@@ -6,17 +6,17 @@ import { AnimatedCircularProgress } from 'react-native-circular-progress';
 const ProfileScreen = () => {
   const navigation = useNavigation<any>();
   const [wellnessScore, setWellnessScore] = useState(80);
-  const riskOf = 'Hypertension';
+  const riskOf = 'Hypertension';//will be taken from ml file
   
   const handleInfoButton = () => {
     Alert.alert(
       'Info',
-      'This is an information message.',
+      'The Wellness Score is a straightforward arithmetic function scaled to a maximum of 100. It is calculated using various parameters from your medical data record. This score provides an easy-to-understand summary of your overall health status.',
       [{ text: 'OK' }]
     );
   }
 
-  // Function to get current date in the format: DD MMM YYYY
+
   const getCurrentDate = () => {
     const date = new Date();
     const options = { year: 'numeric', month: 'short', day: '2-digit' } as const;
