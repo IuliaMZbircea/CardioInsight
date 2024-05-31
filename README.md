@@ -2,7 +2,7 @@
 
 ## Overview
 
-CardioInsight is a web application designed to provide personalized recommendations to users based on their medical records. Leveraging machine learning, the platform predicts the risk of developing heart disease and offers lifestyle recommendations to mitigate these risks. The users can connect with professional medical specialists for virtual consultations directly through the platform. The telemedicine feature allows users to connect with cardiologists or any other relevant healthcare professionals for personalized advice and further assessment.
+CardioInsight is a web application designed to provide personalized recommendations to users based on their medical records. Leveraging machine learning, the platform predicts the risk of developing heart disease and offers lifestyle recommendations to mitigate these risks. The users can connect with professional medical specialists for virtual consultations directly through the platform. 
 
 ## Features
 
